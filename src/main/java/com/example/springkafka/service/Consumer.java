@@ -10,9 +10,9 @@ import java.io.IOException;
 @Service
 public class Consumer {
 
-    private final Logger logger = LoggerFactory.getLogger(Producer.class);
+    private final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics = "users", groupId = "group_id")
+    @KafkaListener(topics = "users", groupId = "group_id_string")
     public void consume(String message) throws IOException {
         logger.info(String.format("#### -> Consumed message -> %s", message));
     }
